@@ -1,0 +1,215 @@
+% SIMSCAPE STARTUP CODE
+% Simscape(TM) Multibody(TM) version: 7.5
+
+% This is a model data file derived from a Simscape Multibody Import XML file using the smimport function.
+% The data in this file sets the block parameter values in an imported Simscape Multibody model.
+% For more information on this file, see the smimport function help page in the Simscape Multibody documentation.
+% You can modify numerical values, but avoid any other changes to this file.
+% Do not add code to this file. Do not edit the physical units shown in comments.
+
+%%%VariableName:smiData
+
+
+%============= RigidTransform =============%
+
+clc
+clear
+% Toolbox use: Curve Fitting Toolbox, Robotic Toolbox
+
+% Add path to the folder containing the URDF file
+%cd 'E:\robotic arm for ros\arm_ros2'
+%smimport('package.xml');
+addpath('E:\robotic arm for ros\arm_ros_2_xml\start_up_code\arm_ros2_urdf\urdf'); % Define folder
+
+% Import the URDF file
+arm_ros2 = importrobot('arm_ros2.urdf'); % Import URDF to file
+gripper = '5th_axis'; % Define URDF file of end-effector
+
+% Define contact points
+%contact_offset = 0.1; % Contact location
+%contact_body = robotics.RigidBody('end_effector'); % Define rigid body
+%setFixedTransform(contact_body.Joint, trvec2tform([contact_offset 0 0])); 
+%addBody(arm_ros2, contact_body, gripper); % Create body
+
+addpath('E:\robotic arm for ros\arm_ros_2_xml')
+
+%Initialize the RigidTransform structure array by filling in null values.
+smiData.RigidTransform(11).translation = [0.0 0.0 0.0];
+smiData.RigidTransform(11).angle = 0.0;
+smiData.RigidTransform(11).axis = [0.0 0.0 0.0];
+smiData.RigidTransform(11).ID = "";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(1).translation = [6.440000000024904 1.5543122344752192e-13 8.8940221321065831];  % cm
+smiData.RigidTransform(1).angle = 2.0943951023949623;  % rad
+smiData.RigidTransform(1).axis = [0.57735026919013821 0.57735026919021459 0.57735026918852439];
+smiData.RigidTransform(1).ID = "B[dumb_1st-1:-:dumb_2nd-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(2).translation = [6.4400000000249005 2.1849189124623081e-13 8.8940221321061799];  % cm
+smiData.RigidTransform(2).angle = 2.0943951023949623;  % rad
+smiData.RigidTransform(2).axis = [0.57735026919013854 0.5773502691902147 0.57735026918852406];
+smiData.RigidTransform(2).ID = "F[dumb_1st-1:-:dumb_2nd-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(3).translation = [-6.4399999999055328 -39.545223575444481 30.369014387510546];  % cm
+smiData.RigidTransform(3).angle = 2.0943951023949672;  % rad
+smiData.RigidTransform(3).axis = [0.57735026919013777 0.57735026919021615 0.57735026918852339];
+smiData.RigidTransform(3).ID = "B[dumb_2nd-1:-:dumb_3rd-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(4).translation = [4.9080766404022071 -1.3562747684413918 1.5164427733156032];  % cm
+smiData.RigidTransform(4).angle = 2.0943951023931957;  % rad
+smiData.RigidTransform(4).axis = [0.57735026918962573 0.57735026918962584 0.57735026918962573];
+smiData.RigidTransform(4).ID = "F[dumb_2nd-1:-:dumb_3rd-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(5).translation = [-9.9920072216264089e-14 3.1086244689504383e-13 0.33999999999480002];  % cm
+smiData.RigidTransform(5).angle = 3.1415926535897931;  % rad
+smiData.RigidTransform(5).axis = [1 0 0];
+smiData.RigidTransform(5).ID = "B[dumb_1st-1:-:dumb_base-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(6).translation = [-18.267184823168932 -0.0053200581666921209 9.2984208604931791];  % cm
+smiData.RigidTransform(6).angle = 3.1415926535897931;  % rad
+smiData.RigidTransform(6).axis = [-1 4.9217446793167644e-29 -8.8662270013490703e-13];
+smiData.RigidTransform(6).ID = "F[dumb_1st-1:-:dumb_base-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(7).translation = [11.333326640402486 37.028725231558603 1.5164427733156904];  % cm
+smiData.RigidTransform(7).angle = 2.0943951023931953;  % rad
+smiData.RigidTransform(7).axis = [0.57735026918962584 -0.57735026918962695 0.57735026918962462];
+smiData.RigidTransform(7).ID = "B[dumb_3rd-1:-:urdf_5th v1-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(8).translation = [9.5459061644766834 -1.2325065122367391 -3.5481940983772775];  % cm
+smiData.RigidTransform(8).angle = 2.0644335639440747;  % rad
+smiData.RigidTransform(8).axis = [0.56700672456088963 0.56700672456089229 0.5975004172429168];
+smiData.RigidTransform(8).ID = "F[dumb_3rd-1:-:urdf_5th v1-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(9).translation = [-3.643179745174685 4.0714934877629787 -4.2451223878491318];  % cm
+smiData.RigidTransform(9).angle = 2.0943951023931917;  % rad
+smiData.RigidTransform(9).axis = [0.57735026918962462 -0.57735026918962373 0.57735026918962906];
+smiData.RigidTransform(9).ID = "B[urdf_5th v1-1:-:urdf_grip v1-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(10).translation = [0.92452836240507885 12.653227759486345 11.859011239560623];  % cm
+smiData.RigidTransform(10).angle = 2.4515515765945897e-16;  % rad
+smiData.RigidTransform(10).axis = [0.90312798193546617 0.42937145718500208 4.7532812074604179e-17];
+smiData.RigidTransform(10).ID = "F[urdf_5th v1-1:-:urdf_grip v1-1]";
+
+%Translation Method - Cartesian
+%Rotation Method - Arbitrary Axis
+smiData.RigidTransform(11).translation = [-33.53312089911514 -46.866248074667283 49.918949324726697];  % cm
+smiData.RigidTransform(11).angle = 1.553343034274943;  % rad
+smiData.RigidTransform(11).axis = [-1 0 0];
+smiData.RigidTransform(11).ID = "RootGround[dumb_base-1]";
+
+
+%============= Solid =============%
+%Center of Mass (CoM) %Moments of Inertia (MoI) %Product of Inertia (PoI)
+
+%Initialize the Solid structure array by filling in null values.
+smiData.Solid(6).mass = 0.0;
+smiData.Solid(6).CoM = [0.0 0.0 0.0];
+smiData.Solid(6).MoI = [0.0 0.0 0.0];
+smiData.Solid(6).PoI = [0.0 0.0 0.0];
+smiData.Solid(6).color = [0.0 0.0 0.0];
+smiData.Solid(6).opacity = 0.0;
+smiData.Solid(6).ID = "";
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(1).mass = 1.2656363564736666;  % kg
+smiData.Solid(1).CoM = [12.281599645562574 4.5120270679097167 1.5157588557269956];  % cm
+smiData.Solid(1).MoI = [98.295817481930698 42.022721040454513 118.30541600257195];  % kg*cm^2
+smiData.Solid(1).PoI = [-0.0038207254792124506 -0.0070187502498164885 7.043945761179212];  % kg*cm^2
+smiData.Solid(1).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(1).opacity = 1;
+smiData.Solid(1).ID = "dumb_3rd*:*Default";
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(2).mass = 0.56415401540227672;  % kg
+smiData.Solid(2).CoM = [-0.052654958136330511 -20.946419594621258 21.680048775714003];  % cm
+smiData.Solid(2).MoI = [115.83520745932502 49.929416318610713 99.443890308491575];  % kg*cm^2
+smiData.Solid(2).PoI = [45.283855321382354 0.2605591568547313 -0.55778002083282729];  % kg*cm^2
+smiData.Solid(2).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(2).opacity = 1;
+smiData.Solid(2).ID = "dumb_2nd*:*Default";
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(3).mass = 1.2466871220720457;  % kg
+smiData.Solid(3).CoM = [-18.311073645289607 10.911955145288896 3.2864286830918839];  % cm
+smiData.Solid(3).MoI = [115.0212013817452 49.951894864220471 99.560845180253537];  % kg*cm^2
+smiData.Solid(3).PoI = [-8.6376009646756771 -0.087231540543431102 -0.13054785901068069];  % kg*cm^2
+smiData.Solid(3).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(3).opacity = 1;
+smiData.Solid(3).ID = "dumb_base*:*Default";
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(4).mass = 0.88996365184783677;  % kg
+smiData.Solid(4).CoM = [1.5077506821222449e-11 -0.024349337923805964 5.4137960460256052];  % cm
+smiData.Solid(4).MoI = [35.726042858811411 66.544041093038999 66.629732369613592];  % kg*cm^2
+smiData.Solid(4).PoI = [-0.10650390100915023 2.9624579914015476e-05 1.4994830576810751e-05];  % kg*cm^2
+smiData.Solid(4).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(4).opacity = 1;
+smiData.Solid(4).ID = "dumb_1st*:*Default";
+
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(5).mass = 1.3584377903993614;  % kg
+smiData.Solid(5).CoM = [-1.8026233044473889 -1.8969663306738791 -4.1464879095536746];  % cm
+smiData.Solid(5).MoI = [41.116448026152881 62.479381901113776 64.513257820663426];  % kg*cm^2
+smiData.Solid(5).PoI = [-0.067724214809937816 -1.2413112714591812 -1.5042605565071916];  % kg*cm^2
+smiData.Solid(5).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(5).opacity = 1;
+smiData.Solid(5).ID = "urdf_5th v1*:*Default";
+%Inertia Type - Custom
+%Visual Properties - Simple
+smiData.Solid(6).mass = 0.76954654090478181;  % kg
+smiData.Solid(6).CoM = [0.92443268128130418 6.7177369477381346 8.1124935791127637];  % cm
+smiData.Solid(6).MoI = [46.673137272766915 7.2081548714882224 47.540259488339416];  % kg*cm^2
+smiData.Solid(6).PoI = [0.027962321712279182 0.00049510992108115555 -0.00026870489488959676];  % kg*cm^2
+smiData.Solid(6).color = [0.792156862745098 0.81960784313725488 0.93333333333333335];
+smiData.Solid(6).opacity = 1;
+smiData.Solid(6).ID = "urdf_grip v1*:*Default";
+
+
+%============= Joint =============%
+%X Revolute Primitive (Rx) %Y Revolute Primitive (Ry) %Z Revolute Primitive (Rz)
+%X Prismatic Primitive (Px) %Y Prismatic Primitive (Py) %Z Prismatic Primitive (Pz) %Spherical Primitive (S)
+%Constant Velocity Primitive (CV) %Lead Screw Primitive (LS)
+%Position Target (Pos)
+
+%Initialize the RevoluteJoint structure array by filling in null values.
+smiData.RevoluteJoint(5).Rz.Pos = 0.0;
+smiData.RevoluteJoint(5).ID = "";
+
+smiData.RevoluteJoint(1).Rz.Pos = 0;  % deg
+smiData.RevoluteJoint(1).ID = "[dumb_1st-1:-:dumb_2nd-1]";
+
+smiData.RevoluteJoint(2).Rz.Pos = 0;  % deg
+smiData.RevoluteJoint(2).ID = "[dumb_2nd-1:-:dumb_3rd-1]";
+
+smiData.RevoluteJoint(3).Rz.Pos = 0;  % deg
+smiData.RevoluteJoint(3).ID = "[dumb_1st-1:-:dumb_base-1]";
+
+smiData.RevoluteJoint(4).Rz.Pos = 90;  % deg
+smiData.RevoluteJoint(4).ID = "[dumb_3rd-1:-:urdf_5th v1-1]";
+
+smiData.RevoluteJoint(5).Rz.Pos = 0;  % deg
+smiData.RevoluteJoint(5).ID = "[urdf_5th v1-1:-:urdf_grip v1-1]";
